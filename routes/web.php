@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EcommerceController;
-
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\DeshboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +18,8 @@ use App\Http\Controllers\EcommerceController;
 Route::get('/',[EcommerceController::class,'index'])->name('home');
 Route::get('/product-category',[EcommerceController::class,'categoryProduct'])->name('product-category');
 Route::get('/product-detail',[EcommerceController::class,'categoryDetail'])->name('product-detail');
+Route::get('/show-cart-product',[CartController::class,'index'])->name('show-cart');
+
+Route::middleware([ 'auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
+    Route::get('/dashboard', [DeshboardController::class, 'index'] )->name('dashboard');
+});

@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>ShopGrids - Bootstrap 5 eCommerce HTML Template.</title>
+    <title>@yield('title')</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('/')}}front/{{asset('/')}}front/assets/images/favicon.svg" />
@@ -106,7 +106,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-3 col-7">
 
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href=" {{route('home')}}">
                         <img src="{{asset('/')}}front/assets/images/logo/logo.svg" alt="Logo">
                     </a>
 
@@ -323,7 +323,7 @@
 </header>
 
 
-
+@yield('body')
 
 
 <footer class="footer">
